@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./api.css";
 
+
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
