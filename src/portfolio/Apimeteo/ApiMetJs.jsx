@@ -24,16 +24,16 @@ function App() {
   };
 
   return (
-    <div className="h-screen h-full flex items-center justify-center bg-blue-300">
-      <div className="w-s h-full p-4 rounded-lg border-2 border-white-800 bg-gray-200 text-center sm:w-96 md:w-4/5 lg:w-4/5 mt-0 flex">
-        <div className="w-1/5">
-          <div className="search mb-4">
+    <div className="bg-blue-300">
+      <div className="flex flex-col h-screen md:flex-row">
+        <div className="w-full md:w-1/5  ">
+          <div className="search">
             <input
               value={location}
               onChange={(event) => setLocation(event.target.value)}
               onKeyPress={searchLocation}
               placeholder="Entrer le nom de la ville"
-              className="py-2 px-4 rounded-lg border border-white-800 bg-green-300 text-red-500 text-lg placeholder-bleu-500 w-full"
+              className="py-2 px-4 rounded-lg border border-gray-800 text-red-500 text-lg placeholder-bleu-500 w-full"
               type="text"
             />
           </div>
@@ -48,7 +48,6 @@ function App() {
               {data.weather ? <p>{data.weather[0].main}</p> : null}
             </div>
           </div>
-
           {data.name !== undefined && (
             <div className="bottom flex mt-auto justify-evenly text-center p-4 rounded-lg bg-white-20">
               <div className="feels">
@@ -63,7 +62,7 @@ function App() {
                 {data.main ? (
                   <p className=" p-2 font-bold">{data.main.humidity}%</p>
                 ) : null}
-                <p className="m-2" >Humidité</p>
+                <p className="m-2">Humidité</p>
               </div>
               <div className="wind">
                 {data.wind ? (
@@ -71,12 +70,24 @@ function App() {
                     {convertWindSpeed(data.wind.speed).toFixed()} km/h
                   </p>
                 ) : null}
-                <p>Vitesse du Vent</p>
+                <p className="m-2">Vitesse du Vent</p>
               </div>
             </div>
           )}
         </div>
-        <div className="w-4/5  bg-gray-400"></div>
+        <div className="w-full md:w-4/5">
+          {data.name !== undefined && (
+            <iframe
+              title="Carte de la ville"
+              className="w-full h-96 md:h-full"
+              src={`https://www.openstreetmap.org/export/embed.html?bbox=${
+                data.coord?.lon - 0.1 || 0
+              },${data.coord?.lat - 0.1 || 0},${data.coord?.lon + 0.1 || 0},${
+                data.coord?.lat + 0.1 || 0
+              }&layer=mapnik`}
+            ></iframe>
+          )}
+        </div>
       </div>
     </div>
   );
