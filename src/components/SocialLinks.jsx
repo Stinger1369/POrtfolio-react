@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import {FaGithub, FaLinkedin} from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
 import {HiOutlineMail} from 'react-icons/hi'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 

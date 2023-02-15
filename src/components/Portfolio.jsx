@@ -1,97 +1,96 @@
-import React, { useContext } from "react";
-
-import { useParams } from "react-router-dom";
-import { ThemeContext } from "../components/ThemeProvider";
-import { useRouteMatch } from "react-router-dom";
+import React, { useState, useContext } from "react";
 import arrayDestruct from "../assets/portfolio/arrayDestruct.jpg";
 import installNode from "../assets/portfolio/installNode.jpg";
 import navbar from "../assets/portfolio/navbar.jpg";
 import reactParallax from "../assets/portfolio/reactParallax.jpg";
 import reactSmooth from "../assets/portfolio/reactSmooth.jpg";
 import reactWeather from "../assets/portfolio/reactWeather.jpg";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import ApiMetJs from "../portfolio/Apimeteo/ApiMetJs";
+import Modal from "react-modal";
+import { ThemeContext } from "../components/ThemeProvider";
 
 const Portfolio = () => {
-  const [theme, setTheme] = useContext(ThemeContext);
-  let { path, url } = useRouteMatch();
+  const [showModal, setShowModal] = useState(false);
+  const [currentDemo, setCurrentDemo] = useState(null);
+  const { darkMode } = useContext(ThemeContext);
 
-  const projects = [
+  Modal.setAppElement("#root");
+
+  const handleModal = (demo) => {
+    setCurrentDemo(demo);
+    setShowModal(!showModal);
+  };
+
+  const portfolios = [
     {
       id: 1,
-      title: "Array destructuring in JavaScript",
-      description:
-        "An explanation and demonstration of array destructuring in JavaScript, with examples and use cases.",
-      image: arrayDestruct,
+      src: arrayDestruct,
+      demo: <ApiMetJs />,
     },
     {
       id: 2,
-      title: "Installing Node.js on different platforms",
-      description:
-        "A comprehensive guide on how to install Node.js on Windows, macOS, and Linux operating systems.",
-      image: installNode,
+      src: reactParallax,
     },
     {
       id: 3,
-      title: "React Navigation Bar",
-      description:
-        "A tutorial on how to create a navigation bar component in React using hooks and styled components.",
-      image: navbar,
+      src: navbar,
     },
     {
       id: 4,
-      title: "React Parallax Effect",
-      description:
-        "A step-by-step guide on how to create a parallax effect in React using react-parallax library.",
-      image: reactParallax,
+      src: reactSmooth,
     },
     {
       id: 5,
-      title: "React Scroll Animation",
-      description:
-        "A tutorial on how to add scroll animations to your React app using react-smooth library.",
-      image: reactSmooth,
+      src: installNode,
     },
     {
       id: 6,
-      title: "React Weather App",
-      description:
-        "A guide on how to build a weather app in React using OpenWeatherMap API and hooks.",
-      image: reactWeather,
+      src: reactWeather,
     },
   ];
 
   return (
-    <Router>
-      <div className={`${theme}-portfolio`}>
-        <h1 className="portfolio-title">My Portfolio</h1>
-        <div className="portfolio-grid">
-          {projects.map((project) => (
-            <div className="portfolio-item" key={project.id}>
-              <img src={project.image} alt={project.title} />
-              <h2>{project.title}</h2>
-              <p>{project.description}</p>
-              <Link to={`${url}/${project.id}`}>Learn More</Link>
+    <section
+      id="portfolio"
+      className={`h-screen w-full ${
+        darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
+      }`}
+    >
+      <div className=" max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+        <h2 className="text-center text-4xl text-white font-bold pb-8">
+          Portfolio
+        </h2>
+        <p className="text-center text-white py-6">
+          Voici quelques-uns de mes projets les plus récents et les plus
+          importants.
+        </p>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
+          {portfolios.map(({ id, src, demo }) => (
+            <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
+              <img
+                src={src}
+                alt=""
+                className="rounded-md duration-200 hover:scale-105"
+              />
+              <div className="flex items-center justify-center">
+                <button
+                  className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
+                  onClick={() => handleModal(demo)}
+                >
+                  Demo
+                </button>
+                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                  Code
+                </button>
+              </div>
             </div>
           ))}
         </div>
-        <Route path={`${path}/:projectId`}>
-          <ProjectDetails projects={projects} />
-        </Route>
       </div>
-    </Router>
-  );
-};
-
-const ProjectDetails = ({ projects }) => {
-  let { projectId } = useParams();
-  const project = projects.find((project) => project.id === Number(projectId));
-
-  return (
-    <div className="project-details">
-      <img src={project.image} alt={project.title} />
-      <h2>{project.title}</h2>
-      <p>{project.description}</p>
-    </div>
+      <Modal isOpen={showModal} onRequestClose={() => handleModal(null)}>
+        {currentDemo}
+      </Modal>
+    </section>
   );
 };
 
