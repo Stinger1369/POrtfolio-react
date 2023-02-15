@@ -6,3 +6,7 @@ iframe {
   height: 100%;
   border: none;
 }
+
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+}
