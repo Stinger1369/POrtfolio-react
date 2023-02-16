@@ -14,7 +14,7 @@ const Home = () => {
         darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
-      <div className="max-w-screen-lx pt-40 mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
+      <div className="max-w-screen-lx pt-40 mx-auto flex flex-col  items-center justify-center h-full px-4 md:flex-row">
         <div className="flex flex-col justify-center h-full">
           <h6 className="text-4xl sm:text-5xl font-bold ">
             Je suis developpeur Full Stack
@@ -22,14 +22,7 @@ const Home = () => {
           <p className="text-gray-500 py-4 max-w-md">
             En tant que développeur Full Stack, je suis passionné par
             l'apprentissage et l'utilisation de technologies innovantes pour
-            créer des applications web et mobiles de haute qualité. Actuellement
-            en cours de formation de développeur web et web mobile avec Anglais,
-            je suis en train de renforcer mes compétences en utilisant des
-            technologies telles que JavaScript, React, PHP, Symfony, Python,
-            Django et Java. En plus de mes compétences en développement, j'ai
-            également une solide expérience en tant que technicien réseau, ce
-            qui me permet d'être curieux, autonome et rigoureux dans mon
-            travail.
+            créer des applications web et mobiles de haute qualité. 
           </p>
 
           <div>
