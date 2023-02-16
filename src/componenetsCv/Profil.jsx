@@ -1,11 +1,13 @@
-import React from "react"
-import { useState } from "react"
+import React from "react";
+import { useState } from "react";
 
 function Profil() {
   return (
-    <div className="profil mb5 m-2">
-      <h2 className="text-red-500 m-2 letter-spacing-5">Profil</h2>
-      <p>
+    <div className="p-5 mb-5">
+      <h2 className="text-red-500 text-2xl font-bold mb-2 tracking-wide">
+        Profil
+      </h2>
+      <p className="text-gray-300 leading-7">
         Actuellement en formation de développeur web et mobile full stack,
         j'apprends à maîtriser les technologies les plus récentes, notamment
         ReactJS, Java et les différents frameworks. Mon expérience en
@@ -20,4 +22,4 @@ function Profil() {
   );
 }
 
-export default Profil
+export default Profil;

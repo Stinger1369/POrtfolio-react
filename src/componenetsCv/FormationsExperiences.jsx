@@ -1,5 +1,4 @@
 import React from "react"
-import "./FormationsExperiences.css"
 import DataFormations from "../componenetsCv/datas/Formations";
 import DataExperiences from "../componenetsCv/datas/Experiences";
 import Formations from "../componenetsCv/Formations";

@@ -1,7 +1,4 @@
-import React from "react"
-import "./Skills.css"
-import { useState } from "react";
-
+import React, { useState } from "react";
 
 const Skills = () => {
   const [data] = useState({
@@ -22,16 +19,13 @@ const Skills = () => {
       { name: "Arabe", percentage: "100%" },
       { name: "Anglais", percentage: "80%" },
     ],
-    hobbies: ["Rugby",
-    "Jeux d'échecs",
-     "Cuisine"],
+    hobbies: ["Rugby", "Jeux d'échecs", "Cuisine"],
   });
 
-
   return (
-    <div className="skills ">
+    <div className="skills m-4">
       <h3 className="text-lg font-medium mt-5 ml-2">Skills</h3>
-      <ul className="list-none flex-wrap ">
+      <ul className="list-none">
         {data.skills.map((skill) => (
           <li className="grid grid-cols-3 w-full">
             <div className="col-start-1 col-end-2">
@@ -39,7 +33,9 @@ const Skills = () => {
             </div>
             <div className="col-start-2 col-end-3">
               <progress
-                className=" w-50 progress-bar "
+                className={`w-50 progress-bar ${
+                  parseFloat(skill.percentage) < 50 ? "bg-red-500" : ""
+                }`}
                 value={parseFloat(skill.percentage)}
                 max="100"
               >
@@ -54,9 +50,11 @@ const Skills = () => {
         {data.languages.map((language) => (
           <li className="grid grid-cols-3">
             <p className="text-sm font-medium mr-3">{language.name}</p>
-            <div className="col-start-2 col-end-3 ">
+            <div className="col-start-2 col-end-3">
               <progress
-                className="w-50 progress-bar bg-red-500"
+                className={`w-50 progress-bar ${
+                  parseFloat(language.percentage) < 50 ? "bg-red-500" : ""
+                }`}
                 value={parseFloat(language.percentage)}
                 max="100"
               >
@@ -66,16 +64,16 @@ const Skills = () => {
           </li>
         ))}
       </ul>
-      <h3 className="text-lg font-medium m-2 mt-5">Hobbies</h3>
-      <ul className="list-none">
+      <h3 className="text-lg font-medium m-2 mt-5 text-center">Hobbies</h3>
+      <ul className="list-none text-center">
         {data.hobbies.map((hobby) => (
-          <li className="flex items-center mt-2">
+          <li className="flex items-center justify-center mt-2">
             <p className="text-sm font-medium">{hobby}</p>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
-export default Skills
+export default Skills;

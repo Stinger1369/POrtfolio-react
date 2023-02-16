@@ -37,7 +37,7 @@ const NavBar = () => {
     },
     {
       id: 6,
-      link: "cv",
+      link: "CV",
     },
   ];
 
@@ -60,10 +60,10 @@ const NavBar = () => {
               darkMode ? "text-white" : "text-black"
             }`}
           >
-            {link === "cv" ? (
+            {link === "CV" ? (
               <button
                 className={`cursor-pointer ${
-                  darkMode ? "text-white" : "text-black"
+                  darkMode ? "text-red-800 font-bold text-xl" : "text-black"
                 }`}
                 onClick={() => setModalIsOpen(true)}
               >

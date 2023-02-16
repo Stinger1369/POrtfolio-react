@@ -6,7 +6,7 @@ import Portfolio from "./components/Portfolio";
 import { SocialLinks } from "./components/SocialLinks";
 import Contact from "./components/Contact";
 import ThemeProvider from "./components/ThemeProvider";
-import CV from "./components/CV";
+
 
 function App() {
   return (

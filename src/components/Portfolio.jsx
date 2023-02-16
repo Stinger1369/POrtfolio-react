@@ -7,6 +7,7 @@ import reactSmooth from "../assets/portfolio/reactSmooth.jpg";
 import reactWeather from "../assets/portfolio/reactWeather.jpg";
 import ApiMetJs from "../portfolio/Apimeteo/ApiMetJs";
 import Responsive from "../portfolio/Responsive/Responsive";
+import Task from "../portfolio/task/Task";
 import Modal from "react-modal";
 import { ThemeContext } from "../components/ThemeProvider";
 
@@ -48,6 +49,7 @@ const Portfolio = () => {
     {
       id: 6,
       src: reactWeather,
+      demo: <Task />,
     },
   ];
 

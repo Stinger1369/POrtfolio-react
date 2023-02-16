@@ -15,8 +15,8 @@
 
 
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 640px) {
   .portfolio, .experience {
-    padding-top: 70rem;
+    padding-top: 8rem;
   }
 }
