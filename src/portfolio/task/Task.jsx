@@ -11,7 +11,8 @@ function TaskManager() {
 
   const handleNewTaskSubmit = (event) => {
     event.preventDefault();
-    setTasks([...tasks, newTask]);
+    const newTaskObject = { id: Date.now(), title: newTask };
+    setTasks(tasks.concat(newTaskObject));
     setNewTask("");
   };
 
@@ -42,7 +43,7 @@ function TaskManager() {
               </button>
             </div>
           </form>
-          <TaskList tasks={tasks} onTaskDelete={handleTaskDelete} />
+          <TaskList tasks={tasks} handleTaskDelete={handleTaskDelete} />
         </div>
       </div>
     </div>

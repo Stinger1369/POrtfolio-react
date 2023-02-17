@@ -1,5 +1,5 @@
-import React from 'react';
-import Task from './Task';
+import React from "react";
+import Task from "./Task";
 
 function TaskList({ tasks, handleTaskDelete }) {
   return (
@@ -10,7 +10,11 @@ function TaskList({ tasks, handleTaskDelete }) {
       ) : (
         <ul className="space-y-4">
           {tasks.map((task) => (
-            <Task key={task.id} task={task} handleTaskDelete={handleTaskDelete} />
+            <Task
+              key={task.id}
+              task={task}
+              handleTaskDelete={handleTaskDelete}
+            />
           ))}
         </ul>
       )}
