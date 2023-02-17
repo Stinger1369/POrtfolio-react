@@ -5,6 +5,8 @@ import { ThemeContext } from "../components/ThemeProvider";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 import Modal from "react-modal";
 import CV from "./CV";
 
@@ -37,13 +39,13 @@ const NavBar = () => {
     },
     {
       id: 6,
-      link: "CV",
+      link: "cv",
     },
   ];
 
   return (
     <div
-      className={`flex justify-between items-center w-full text-gray-500 h-20 px-4 bg-black  fixed ${
+      className={`flex justify-between items-center w-full h-20 px-4 bg-black  fixed ${
         darkMode ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
@@ -52,7 +54,19 @@ const NavBar = () => {
           <p className="text-5xl font-signature ml-2 mt-6 text-white">Bilou</p>
         </a>
       </div>
-      <ul className="hidden md:flex mt-3 ">
+
+      <div className="md:hidden">
+        <button
+          className={`cursor-pointer z-10 text-gray-500 ${
+            darkMode ? "text-white" : "text-black"
+          }`}
+          onClick={() => setNav(!nav)}
+        >
+          {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+        </button>
+      </div>
+
+      <ul className="hidden md:flex mt-3">
         {links.map(({ id, link }) => (
           <li
             key={id}
@@ -76,19 +90,11 @@ const NavBar = () => {
             )}
           </li>
         ))}
+
         <button onClick={toggleDarkMode}>
           <FontAwesomeIcon icon={darkMode ? faMoon : faSun} />
         </button>
       </ul>
-
-      <div
-        onClick={() => setNav(!nav)}
-        className={`cursor-pointer pr-4 z-10 text-gray-500 md:hidden ${
-          darkMode ? "text-white" : "text-black"
-        }`}
-      >
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
-      </div>
 
       {nav && (
         <ul className="fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500 flex flex-col justify-center items-center">
@@ -113,6 +119,7 @@ const NavBar = () => {
           ))}
         </ul>
       )}
+
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <CV data={data} />
         <button

@@ -14,15 +14,15 @@ const Home = () => {
         darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
-      <div className="max-w-screen-lx pt-40 mx-auto flex flex-col  items-center justify-center h-full px-4 md:flex-row">
+      <div className="max-w-screen-lg pt-40 mx-auto flex flex-col  items-center justify-center h-full px-4 md:flex-row">
         <div className="flex flex-col justify-center h-full">
           <h6 className="text-4xl sm:text-5xl font-bold ">
-            Je suis developpeur Full Stack
+            Je suis développeur Full Stack
           </h6>
           <p className="text-gray-500 py-4 max-w-md">
             En tant que développeur Full Stack, je suis passionné par
             l'apprentissage et l'utilisation de technologies innovantes pour
-            créer des applications web et mobiles de haute qualité. 
+            créer des applications web et mobiles de haute qualité.
           </p>
 
           <div>
@@ -30,7 +30,7 @@ const Home = () => {
               to="portfolio"
               smooth
               duration={500}
-              className="group text-white w-fit  px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+              className="group text-white inline-flex w-fit px-6 py-3 my-2 items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
             >
               Portfolio
               <span className="group-hover:rotate-90 duration-300">

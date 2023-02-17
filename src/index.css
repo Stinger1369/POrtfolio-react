@@ -16,7 +16,15 @@
 
 
 @media (max-width: 640px) {
-  .portfolio, .experience {
-    padding-top: 8rem;
+  #portfolio {
+    padding-top: 120vh;
+  }
+
+  #about {
+    margin-bottom: 80px;
+  }
+
+  #experience{
+    padding-top:120vh
   }
 }

@@ -23,7 +23,7 @@ const Skills = () => {
   });
 
   return (
-    <div className="skills m-4">
+    <div className="skills ">
       <h3 className="text-lg font-medium mt-5 ml-2">Skills</h3>
       <ul className="list-none">
         {data.skills.map((skill) => (
@@ -33,11 +33,12 @@ const Skills = () => {
             </div>
             <div className="col-start-2 col-end-3">
               <progress
-                className={`w-50 progress-bar ${
+                className={`progress-bar ${
                   parseFloat(skill.percentage) < 50 ? "bg-red-500" : ""
                 }`}
                 value={parseFloat(skill.percentage)}
                 max="100"
+                style={{ width: "150px" }}
               >
                 {skill.percentage}
               </progress>
@@ -52,7 +53,7 @@ const Skills = () => {
             <p className="text-sm font-medium mr-3">{language.name}</p>
             <div className="col-start-2 col-end-3">
               <progress
-                className={`w-50 progress-bar ${
+                className={`w-150 progress-bar ${
                   parseFloat(language.percentage) < 50 ? "bg-red-500" : ""
                 }`}
                 value={parseFloat(language.percentage)}
