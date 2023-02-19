@@ -1,13 +1,26 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function Profil() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="p-5 mb-5">
-      <h2 className="text-red-500 text-2xl font-bold mb-2 tracking-wide">
+    <div
+      className="p-5 mb-5"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <h2
+        className={`text-2xl font-bold mb-2 tracking-wide ${
+          isHovered ? "text-red-500 animate-pulse" : "text-gray-500"
+        }`}
+      >
         Profil
       </h2>
-      <p className="text-gray-300 leading-7">
+      <p
+        className={`leading-7 ${
+          isHovered ? "text-gray-200 animate-bounce" : "text-gray-300"
+        }`}
+      >
         Actuellement en formation de développeur web et mobile full stack,
         j'apprends à maîtriser les technologies les plus récentes, notamment
         ReactJS, Java et les différents frameworks. Mon expérience en

@@ -27,15 +27,16 @@ const CV = ({ data }) => {
   return (
     <div className="flex flex-col lg:flex-row">
       <div
-        className={`w-full lg:w-1/5 p-4 m-2 ${
+        className={`w-full lg:w-1/5  mr-2 ${
           darkMode ? "bg-gray-800 text-white" : "bg-gray-400 text-black"
         }`}
       >
+        
         <User />
         <Skills />
       </div>
       <div
-        className={`w-full lg:w-4/5 m-2p-4 ${
+        className={`w-full lg:w-4/5   ${
           darkMode ? "bg-gray-800 text-white" : "bg-gray-400 text-black"
         }`}
       >

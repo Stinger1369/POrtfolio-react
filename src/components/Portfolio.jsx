@@ -30,21 +30,25 @@ const Portfolio = () => {
       id: 1,
       src: arrayDestruct,
       demo: <ApiMetJs />,
+      code: "https://github.com/Stinger1369/POrtfolio-react",
     },
     {
       id: 2,
       src: reactParallax,
       demo: <AppOmdb />,
+      code: "https://github.com/Stinger1369/POrtfolio-react",
     },
     {
       id: 3,
       src: navbar,
       demo: <Responsive />,
+      code: "https://github.com/Stinger1369/POrtfolio-react",
     },
     {
       id: 4,
       src: reactSmooth,
       demo: <App />,
+      code: "https://github.com/Stinger1369/POrtfolio-react",
     },
     {
       id: 5,
@@ -56,30 +60,34 @@ const Portfolio = () => {
           style={{ width: "100%", height: "80vh", border: "none" }}
         ></iframe>
       ),
+      code: "https://www.agence-tmart.com/",
     },
     {
       id: 6,
       src: reactWeather,
       demo: <Task />,
+      code: "https://github.com/Stinger1369/POrtfolio-react",
     },
   ];
 
   return (
     <section
       id="portfolio"
-      className={`h-screen w-full  ${
+      className={` md:h-auto md:min-h-screen ${
         darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <h2 className="text-center text-4xl text-white font-bold ">
-          Portfolio
-        </h2>
-        <p className="text-center text-white py-6">
-          Voici quelques-uns de mes projets les plus récents.
-        </p>
+        <div className="pb-8">
+          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+            Portfolio
+          </p>
+          <p className="text-center text-white py-6">
+            Voici quelques-uns de mes projets les plus récents.
+          </p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 px-2 sm:px-0">
-          {portfolios.map(({ id, src, demo }) => (
+          {portfolios.map(({ id, src, demo, code }) => (
             <div
               key={id}
               className="shadow-md shadow-gray-600 rounded-lg overflow-hidden"
@@ -96,7 +104,10 @@ const Portfolio = () => {
                 >
                   Demo
                 </button>
-                <button className="w-1/2 py-3 text-sm font-medium text-gray-700 uppercase tracking-wider">
+                <button
+                  className="w-1/2 py-3 text-sm font-medium text-gray-700 uppercase tracking-wider"
+                  onClick={() => window.open(code)}
+                >
                   Code
                 </button>
               </div>

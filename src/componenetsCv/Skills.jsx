@@ -38,7 +38,7 @@ const Skills = () => {
                 }`}
                 value={parseFloat(skill.percentage)}
                 max="100"
-                style={{ width: "150px" }}
+                style={{ width: "120px" }}
               >
                 {skill.percentage}
               </progress>
@@ -53,11 +53,12 @@ const Skills = () => {
             <p className="text-sm font-medium mr-3">{language.name}</p>
             <div className="col-start-2 col-end-3">
               <progress
-                className={`w-150 progress-bar ${
+                className={` progress-bar ${
                   parseFloat(language.percentage) < 50 ? "bg-red-500" : ""
                 }`}
                 value={parseFloat(language.percentage)}
                 max="100"
+                style={{ width: "120px" }}
               >
                 {language.percentage}
               </progress>

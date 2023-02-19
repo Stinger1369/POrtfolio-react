@@ -12,9 +12,24 @@
   }
 }
 
+/* #BilouImage {
+  clip-path: polygon(0 0, 10% 0, 9% 3%, 20% 3%, 19% 7%, 30% 7%, 29% 11%, 40% 11%, 39% 15%, 50% 15%,
+      49% 19%, 60% 19%, 59% 23%, 70% 23%, 69% 27%, 80% 27%, 79% 31%, 90% 31%, 100% 31%,
+      100% 100%, 90% 100%, 89% 97%, 80% 97%, 79% 93%, 70% 93%, 69% 89%, 60% 89%, 59% 85%,
+      50% 85%, 49% 81%, 40% 81%, 39% 77%, 30% 77%, 29% 73%, 20% 73%, 19% 69%, 10% 69%,
+      9% 65%, 0 65%);
+  transition: clip-path 0.3s;
+}
 
+#BilouImage:hover {
+  clip-path: polygon(0 0, 10% 0, 9% 3%, 20% 3%, 19% 7%, 30% 7%, 29% 11%, 40% 11%, 39% 15%, 50% 15%,
+      49% 19%, 60% 19%, 59% 23%, 70% 23%, 69% 27%, 80% 27%, 79% 31%, 90% 31%, 100% 31%,
+      100% 100%, 90% 100%, 89% 97%, 80% 97%, 79% 93%, 70% 93%, 69% 89%, 60% 89%, 59% 85%,
+      50% 85%, 49% 81%, 40% 81%, 39% 77%, 30% 77%, 29% 73%, 20% 73%, 19% 69%, 10% 69%,
+      9% 65%, 0 65%);
+} */
 
-
+/* 
 @media (max-width: 640px) {
   #portfolio {
     padding-top: 120vh;
@@ -32,28 +47,11 @@
     padding-top: 10vh
   }
 }
+*/
+/* @media screen and (orientation: landscape)and (max-width: 800px) {
 
-@media screen and (orientation: landscape)and (max-width: 768px) {
-  #home {
-    padding-top: 80vh
+  #contact {
+    padding-top: 400vh
   }
 
-  #portfolio {
-    padding-top: 120vh;
-  }
-
-  #about {
-    padding-top: 100vh;
-  }
-
-  #experience {
-    padding-top: 150vh
-  }
-
-  #BilouImage {
-    float: right;
-    padding-left: 50vh;
-
-  }
-
-}
+}  */

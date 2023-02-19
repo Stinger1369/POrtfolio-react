@@ -13,7 +13,7 @@ const User = () => {
     image: BilouImage,
     name: "Zaaraoui Bilel",
     title: "Developpeur Web & Web Mobile",
-    email: "Bilelzara@gmail.com",
+    email: "bil@zara-bil.fr",
     phone: "0659165303",
     address: "4 place esquiros 13009",
     github: "https://github.com/Stinger1369",
@@ -44,7 +44,7 @@ const User = () => {
           <li className="flex items-center mt-2">
             <FaGlobe className="text-lg mr-2" />
             <a href="www.zaaraoui-bilel.com" className="text-sm font-medium">
-              www.zaaraoui-bilel.com
+              www.zara-bil.fr
             </a>
           </li>
           <li className="flex items-center mt-2">
