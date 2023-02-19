@@ -39,7 +39,7 @@ const NavBar = () => {
     },
     {
       id: 6,
-      link: "cv",
+      link: "CV",
     },
   ];
 
@@ -50,8 +50,17 @@ const NavBar = () => {
       }`}
     >
       <div>
-        <a href="home" className="cursor-pointer">
-          <p className="text-5xl font-signature ml-2 mt-6 text-white">Bilou</p>
+        <a
+          href="home"
+          className="cursor-pointer no-underline text-inherit hover:text-red-500"
+        >
+          <p
+            className={`text-5xl font-signature ml-2 mt-6 text-white${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
+            Bil
+          </p>
         </a>
       </div>
 
@@ -103,7 +112,7 @@ const NavBar = () => {
               key={id}
               className="px-5 cursor-pointer capitalize py-6 text-4xl font-medium hover:scale-105 duration-200 text-gray-500"
             >
-              {link === "cv" ? (
+              {link === "CV" ? (
                 <button onClick={() => setModalIsOpen(true)}>{link}</button>
               ) : (
                 <Link

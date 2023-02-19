@@ -3,13 +3,13 @@ import { ThemeContext } from "../components/ThemeProvider";
 import BilouImage from "../assets/BilouImage.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
-
+import "./Home.css"
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
 
   return (
     <div
-      name="home"
+      id="home"
       className={`h-screen w-full ${
         darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
@@ -30,10 +30,10 @@ const Home = () => {
               to="portfolio"
               smooth
               duration={500}
-              className="group text-white inline-flex w-fit px-6 py-3 my-2 items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+              className="animate-pulse group text-white inline-flex w-fit px-6 py-3 my-2 items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
             >
               Portfolio
-              <span className="group-hover:rotate-90 duration-300">
+              <span className="group-hover:rotate-90 duration-300 ">
                 <MdOutlineKeyboardArrowRight size={25} className="ml-1" />
               </span>
             </Link>
@@ -41,9 +41,10 @@ const Home = () => {
         </div>
         <div>
           <img
+            id="BilouImage"
             src={BilouImage}
             alt="my profile"
-            className="rounded-2xl mx-auto w-2/3 md:w-full"
+            className=" rounded-2xl mx-auto w-2/3 md:w-full "
           />
         </div>
       </div>

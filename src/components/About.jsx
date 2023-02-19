@@ -6,7 +6,7 @@ const About = () => {
 
   return (
     <div
-      name="about"
+      id="about"
       className={`w-full flex flex-col items-center justify-center pt-20 ${
         darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
@@ -47,3 +47,6 @@ const About = () => {
 };
 
 export default About;
+
+
+

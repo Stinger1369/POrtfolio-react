@@ -21,10 +21,39 @@
   }
 
   #about {
-    margin-bottom: 80px;
+    padding-top: 20vh;
   }
 
-  #experience{
-    padding-top:120vh
+  #experience {
+    padding-top: 150vh
   }
+
+  #home {
+    padding-top: 10vh
+  }
+}
+
+@media screen and (orientation: landscape)and (max-width: 768px) {
+  #home {
+    padding-top: 80vh
+  }
+
+  #portfolio {
+    padding-top: 120vh;
+  }
+
+  #about {
+    padding-top: 100vh;
+  }
+
+  #experience {
+    padding-top: 150vh
+  }
+
+  #BilouImage {
+    float: right;
+    padding-left: 50vh;
+
+  }
+
 }
