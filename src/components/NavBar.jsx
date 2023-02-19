@@ -190,7 +190,7 @@ const NavBar = () => {
     >
       <div>
         <a
-          href="home"
+          href="/"
           className="cursor-pointer no-underline text-inherit hover:text-red-500"
         >
           <Logo>
