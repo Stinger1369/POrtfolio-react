@@ -7,19 +7,26 @@ import "./Home.css";
 
 const Home = () => {
   const { darkMode } = useContext(ThemeContext);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isImageHovered, setIsImageHovered] = useState(false);
+  const IMAGE_SCALE_FACTOR = 1.1;
+  const IMAGE_SCALE_TRANSITION_DURATION = "transform 0.5s";
+  const SECTION_LABEL = "Section d'accueil";
+  const DEVELOPER_TITLE = "Je suis développeur Full Stack";
+  const DEVELOPER_DESCRIPTION =
+    "En tant que développeur Full Stack, je suis passionné par l'apprentissage et l'utilisation de technologies innovantes pour créer des applications web et mobiles de haute qualité. Mon expertise s'étend de la création de sites web statiques à la conception d'applications mobiles dynamiques, en passant par le développement de logiciels complexes. Mon approche centrée sur l'utilisateur me permet de comprendre les besoins de mes clients et de leurs utilisateurs finaux, afin de créer des solutions performantes et intuitives. J'aime travailler en équipe et je suis toujours à la recherche de nouvelles idées et de nouvelles technologies pour améliorer mes compétences et offrir une valeur ajoutée à mes projets. Je suis convaincu que mon expérience et ma passion pour la technologie me permettent de relever les défis les plus complexes et de créer des applications web et mobiles qui répondent aux besoins de mes clients.";
+  const PORTFOLIO_LINK_LABEL = "Lien vers la section Portfolio";
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    setIsImageHovered(true);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    setIsImageHovered(false);
   };
 
   const imageStyle = {
-    transform: isHovered ? "scale(1.1)" : "scale(1)",
-    transition: "transform 0.5s",
+    transform: isImageHovered ? `scale(${IMAGE_SCALE_FACTOR})` : "scale(1)",
+    transition: IMAGE_SCALE_TRANSITION_DURATION,
   };
 
   return (
@@ -28,7 +35,7 @@ const Home = () => {
       className={`w-full ${
         darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
-      aria-label="Section d'accueil"
+      aria-label={SECTION_LABEL}
     >
       <div
         className="max-w-screen-lg pt-40 mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row"
@@ -39,24 +46,21 @@ const Home = () => {
             className="text-4xl sm:text-5xl font-bold"
             aria-label="Développeur Full Stack"
           >
-            Je suis développeur Full Stack
+            {DEVELOPER_TITLE}
           </h1>
           <p
             className="text-gray-500 py-4 max-w-md"
             aria-label="Description de développeur"
           >
-            En tant que développeur Full Stack, je suis passionné par
-            l'apprentissage et l'utilisation de technologies innovantes pour
-            créer des applications web et mobiles de haute qualité.
-          </p>
-
+            {DEVELOPER_DESCRIPTION}
+          </p>{" "}
           <div>
             <Link
               to="portfolio"
               smooth
               duration={500}
               className="animate-pulse group text-white inline-flex w-fit px-6 py-3 my-2 items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
-              aria-label="Lien vers la section Portfolio"
+              aria-label={PORTFOLIO_LINK_LABEL}
             >
               Portfolio
               <span className="group-hover:rotate-90 duration-300 ">

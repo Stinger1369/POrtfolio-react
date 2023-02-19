@@ -1,85 +1,49 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../components/ThemeProvider";
 
-const Contact = () => {
+const About = () => {
   const { darkMode } = useContext(ThemeContext);
 
   return (
     <div
-      id="contact"
+      name="about"
       className={`w-full flex flex-col items-center justify-center pt-20 ${
         darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <h2 className="text-4xl font-bold inline border-b-4 border-gray-500 pb-8">
-          Contact
-        </h2>
-
-        <form
-          className="max-w-md w-full mx-auto mt-10 space-y-6 text-lg"
-          action="https://formspree.io/f/xdopbgad"
-          method="POST"
-        >
-          <div className="space-y-2">
-            <label htmlFor="name" className="font-medium">
-              Nom
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              autoComplete="name"
-              required
-              className={`w-full border rounded-md p-2 ${
-                darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
-              }`}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="email" className="font-medium">
-              Adresse e-mail
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              className={`w-full border rounded-md p-2 ${
-                darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
-              }`}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="message" className="font-medium">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              required
-              className={`w-full border rounded-md p-2 ${
-                darkMode ? "bg-gray-800 text-white" : "bg-white text-black"
-              }`}
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className={`w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-md px-4 py-2 font-medium ${
-              darkMode ? "bg-gray-800" : ""
+        <div className="pb-8">
+          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+            À propos de Bilou
+          </p>
+          <br />
+          <p
+            className={`text-xl mt-10 md:mt-20 ${
+              darkMode ? "text-white" : "text-black"
             }`}
           >
-            Envoyer
-          </button>
-        </form>
+            En tant que développeur Full Stack expérimenté, j'ai une passion
+            pour l'apprentissage et l'utilisation de technologies innovantes
+            pour créer des applications web et mobiles de haute qualité. Mes
+            compétences en développement incluent JavaScript, React, PHP,
+            Symfony, Python, Django et Java. En plus de mes compétences en
+            développement, j'ai également une solide expérience en tant que
+            technicien réseau. Je suis capable de travailler de manière autonome
+            et rigoureuse pour livrer des résultats de qualité supérieure. Mon
+            objectif est de continuer à élargir mes compétences et à travailler
+            sur des projets passionnants qui ont un impact réel sur les
+            utilisateurs finaux
+          </p>
+          <br />
+          <p className={`text-lg md:text-xl${darkMode ? "white" : "black"}`}>
+            Je suis actuellement à la recherche d'un emploi ou un stage en tant que
+            développeur web et web mobile. Si vous avez un poste à pourvoir,
+            n'hésitez pas à me contacter.
+          </p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Contact;
+export default About;
