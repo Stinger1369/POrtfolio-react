@@ -72,6 +72,7 @@ const Portfolio = () => {
 
   return (
     <section
+      name="portfolio"
       id="portfolio"
       className={` md:h-auto md:min-h-screen ${
         darkMode ? "bg-gray-800 text-white" : "bg-white text-black"

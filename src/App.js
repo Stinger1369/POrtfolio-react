@@ -6,18 +6,19 @@ import Portfolio from "./components/Portfolio";
 import { SocialLinks } from "./components/SocialLinks";
 import Contact from "./components/Contact";
 import ThemeProvider from "./components/ThemeProvider";
-
+import Head from "./components/Head";
 
 function App() {
   return (
     <div>
       <ThemeProvider>
+        <Head />
         <NavBar />
         <Home />
         <About />
         <Portfolio />
         <Experience />
-        
+
         <SocialLinks />
         <Contact />
       </ThemeProvider>

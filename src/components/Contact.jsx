@@ -42,12 +42,11 @@ const Contact = () => {
 
   return (
     <div
+      name="contact"
       id="contact"
-      className={` bg-gradient-to-b from-${
-        darkMode ? "black" : "white"
-      } to-${darkMode ? "gray-800" : "gray-100"} p-4 text-${
-        darkMode ? "white" : "black"
-      }`}
+      className={` bg-gradient-to-b from-${darkMode ? "black" : "white"} to-${
+        darkMode ? "gray-800" : "gray-100"
+      } p-4 text-${darkMode ? "white" : "black"}`}
     >
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto ">
         <div className="pb-8">

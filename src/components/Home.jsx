@@ -73,7 +73,7 @@ const Home = () => {
           <img
             id="BilouImage"
             src={BilouImage}
-            alt="Photo de profil"
+            alt=""
             className="rounded-2xl mx-auto w-2/3 md:w-full"
             style={imageStyle}
             onMouseEnter={handleMouseEnter}

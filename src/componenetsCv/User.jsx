@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 import BilouImage from "../assets/BilouImage.png";
 
 const User = () => {
@@ -21,46 +22,100 @@ const User = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <img
+      <motion.img
         src={data.image}
         alt={data.name}
         className="w-32 h-48 rounded-full mx-auto mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       />
       <div className="text-center">
         <div className="flex justify-center">
-          <h2 className="text-2xl font-medium mt-2">{data.name}</h2>
+          <motion.h2
+            className="text-2xl font-medium mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {data.name}
+          </motion.h2>
         </div>
-        <p className="text-sm font-medium mt-2">{data.title}</p>
-        <h3 className="text-lg font-medium mt-5">Contact Info</h3>
-        <ul className="list-none mt-2">
-          <li className="flex items-center">
+        <motion.p
+          className="text-sm font-medium mt-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          {data.title}
+        </motion.p>
+        <motion.h3
+          className="text-lg font-medium mt-5"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Contact Info
+        </motion.h3>
+        <motion.ul
+          className="list-none mt-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <motion.li
+            className="flex items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <FaPhone className="text-lg mr-2" />
             <p className="text-sm font-medium">{data.phone}</p>
-          </li>
-          <li className="flex items-center mt-2">
+          </motion.li>
+          <motion.li
+            className="flex items-center mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
             <FaFax className="text-lg mr-2" />
             <p className="text-sm font-medium">{data.email}</p>
-          </li>
-          <li className="flex items-center mt-2">
+          </motion.li>
+          <motion.li
+            className="flex items-center mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             <FaGlobe className="text-lg mr-2" />
             <a href="www.zaaraoui-bilel.com" className="text-sm font-medium">
               www.zara-bil.fr
             </a>
-          </li>
-          <li className="flex items-center mt-2">
-            <FaLinkedin className="text-lg mr-2" />
+          </motion.li>
+          <motion.li
+            className="font-signature  flex items-center mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <FaLinkedin className="text-lg  mr-2" />
             <a
               href="https://www.linkedin.com/in/bilel-zaaraoui/"
-              className="text-sm font-medium"
+              className="text-xl font-medium"
             >
-              https://www.linkedin.com/in/bilel-zaaraoui/
+              Bilel-Zaaraoui
             </a>
-          </li>
-          <li className="flex items-center mt-2">
+          </motion.li>
+          <motion.li
+            className="flex items-center mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
             <FaMapMarkerAlt className="text-lg mr-2" />
             <p className="text-sm font-medium">{data.address}</p>
-          </li>
-        </ul>
+          </motion.li>
+        </motion.ul>
       </div>
     </div>
   );

@@ -7,19 +7,7 @@ import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeProvider";
 
-const breakpoints = {
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
-};
 
-const containerWidths = {
-  sm: "full",
-  md: "4/5",
-  lg: "3/5",
-  xl: "2/5",
-};
 
 const CV = ({ data }) => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
@@ -27,7 +15,7 @@ const CV = ({ data }) => {
   return (
     <div className="flex flex-col lg:flex-row">
       <div
-        className={`w-full lg:w-1/5  mr-2 ${
+        className={`w-full lg:w-1/4  mr-2 ${
           darkMode ? "bg-gray-800 text-white" : "bg-gray-400 text-black"
         }`}
       >
@@ -36,7 +24,7 @@ const CV = ({ data }) => {
         <Skills />
       </div>
       <div
-        className={`w-full lg:w-4/5   ${
+        className={`w-full lg:w-3/4   ${
           darkMode ? "bg-gray-800 text-white" : "bg-gray-400 text-black"
         }`}
       >
