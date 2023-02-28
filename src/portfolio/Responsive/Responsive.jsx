@@ -88,37 +88,44 @@ function Navbar() {
       </div>
 
       <div
-        className={`${isOpen ? "block" : "hidden"} md:hidden`}
-        onClick={toggleMenu}
+        className={`${
+          isOpen ? "flex" : "hidden"
+        } flex-col md:flex-row md:items-center md:justify-between bg-gray-800 md:bg-transparent px-4 py-6 md:px-0`}
       >
-        <div className="px-2 pt-2 pb-3 sm:px-3">
+        <div className="flex flex-col md:flex-row md:items-center">
           <a
             href="#"
-            className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900"
+            className="text-lg font-medium text-white md:ml-4 md:pl-4  border-l-2 border-transparent md:border-gray-500 hover:border-indigo-500 focus:text-white focus:border-indigo-500 transition duration-150 ease-in-out"
           >
             Dashboard
           </a>
           <a
             href="#"
-            className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 sm:mt-0 sm:ml-2"
+            className="mt-3 text-lg font-medium text-gray-300 md:mt-0 md:ml-4 md:pl-4 border-l-2 border-transparent md:border-gray-500 hover:border-indigo-500 focus:text-white focus:border-indigo-500 transition duration-150 ease-in-out"
           >
             Team
           </a>
           <a
             href="#"
-            className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 sm:mt-0 sm:ml-2"
+            className="mt-3 text-lg font-medium text-gray-300 md:mt-0 md:ml-4 md:pl-4 border-l-2 border-transparent md:border-gray-500 hover:border-indigo-500 focus:text-white focus:border-indigo-500 transition duration-150 ease-in-out"
           >
             Projects
           </a>
           <a
             href="#"
-            className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 sm:mt-0 sm:ml-2"
+            className="mt-3 text-lg font-medium text-gray-300 md:mt-0 md:ml-4 md:pl-4 border-l-2 border-transparent md:border-gray-500 hover:border-indigo-500 focus:text-white focus:border-indigo-500 transition duration-150 ease-in-out"
           >
             Calendar
           </a>
+        </div>
+        <div className="mt-4 md:mt-0">
+          <button className="block text-lg font-medium text-gray-300 hover:text-white focus:text-white transition duration-150 ease-in-out">
+            Logout
+          </button>
         </div>
       </div>
     </nav>
   );
 }
+
 export default Navbar;
