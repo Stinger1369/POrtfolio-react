@@ -95,7 +95,7 @@ const Contact = () => {
               <p className="text-red-500 text-xs">{messageError}</p>
             )}
             <button
-              className={`my-4 p-2 rounded-md bg-${
+              className={` my-4 p-2 rounded-md bg-${
                 darkMode ? "white" : "black"
               } text-${darkMode ? "black" : "white"} focus:outline-none`}
               type="submit"
@@ -105,6 +105,10 @@ const Contact = () => {
           </form>
         </div>
       </div>
+
+      <footer className="text-center mt-20 py-4 text-white-500 text-sm">
+        &copy; 2020 - {new Date().getFullYear()} www.zara-bil.fr
+      </footer>
     </div>
   );
 };
