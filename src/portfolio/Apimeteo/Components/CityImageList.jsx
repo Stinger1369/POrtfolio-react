@@ -27,7 +27,6 @@ function CityImageList(props) {
           key={index}
           small={image}
           large={image}
-          alt={`City image ${index}`}
           className="h-32 w-full object-cover cursor-pointer"
           onClick={onClick.bind(null, index)}
           closeText="Fermer"
@@ -55,14 +54,14 @@ function CityImageList(props) {
           customHeader={
             <div className="flex justify-between items-center px-4 py-2 bg-gray-900 text-white">
               <button
-                className="text-gray-500 hover:text-white focus:outline-none w-6 h-6"
+                className="text-gray-500 hover:text-white focus:outline-none w-6 h-6 !important"
                 onClick={handlePreviousImage}
               >
                 <FontAwesomeIcon icon={faChevronLeft} />
               </button>
               <h2 className="text-lg font-bold">{`City image ${index + 1}`}</h2>
               <button
-                className="text-gray-500 hover:text-white focus:outline-none w-6 h-6"
+                className="text-gray-500 hover:text-white focus:outline-none w-6 h-6 !important"
                 onClick={handleNextImage}
               >
                 <FontAwesomeIcon icon={faChevronRight} />

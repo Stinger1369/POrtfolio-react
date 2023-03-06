@@ -14,8 +14,8 @@ function ApiMetJs() {
   const [showGallery, setShowGallery] = useState(false);
 
   const handleSearchClick = () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=895284fb2d2c50a520ea537456963d9c`;
-    const cityImageUrl = `https://api.unsplash.com/search/photos?query=${location}&per_page=6&client_id=9WWM5FaAgR5NV2l-GsdjL5A1FK0hRUYkIgWJM7CIzXE`;
+   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`;
+   const cityImageUrl = `https://api.unsplash.com/search/photos?query=${location}&per_page=6&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`;
 
     axios
       .get(url)
